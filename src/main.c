@@ -1,6 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+struct mmap_segment_details{
+    void *start;
+    void *end;
+    char *name;
+    short name_length;
+    _Bool in_use;
+};
+
 void heap_menu(){
     printf("HEAP BREAK MENU\n");
     printf("#######################################");
