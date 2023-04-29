@@ -34,13 +34,15 @@ short main_menu(){
     printf("MAIN MENU\n");
     printf("#######################################");
     printf("\n\n");
-    printf(" 1  :  Change heap break \n");
+    printf(" 1  :  Heap Break \n");
     printf(" 2  :  Anonymous mmap \n");
     printf(" 3  :  File mmap \n");
     printf(" 0  :  Exit \n");
     printf("\nSelection : ");
     int selection = getchar();
-    getchar();
+    if (selection != '\n'){
+        getchar();
+    }
     printf("\n");
     return selection;
 }
