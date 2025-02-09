@@ -13,8 +13,8 @@ lib:
 ####################################################
 
 bin/linux-memory-debugger: src/main.c bin
-	gcc ${CFLAGS} -o bin/linux-memory-debugger src/main.c
-	strip bin/linux-memory-debugger
+	gcc ${CFLAGS} -o bin/linux-memory-debugger src/main.c -lncurses
+	# strip bin/linux-memory-debugger
 
 ####################################################
 
