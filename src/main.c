@@ -38,6 +38,11 @@ int main (int argc, const char *argv[]){
     // ITEM **main_menu_items = (ITEM**)calloc(number_of_choices +1, sizeof(ITEM *));
     for(int i=0; i < number_of_choices; i++) {
         main_menu_items[i] = new_item(main_menu_choices[i], main_menu_choices[i]);
+        if (main_menu_items[i]== NULL) {
+            perror("ERROR E001: failure while instantiating menu_items.\n");
+            endwin();
+            exit(1);
+        }
     }
     main_menu_items[number_of_choices] = (ITEM *)NULL;
 
@@ -57,6 +62,12 @@ int main (int argc, const char *argv[]){
                 break;
         }
     }
+
+    unpost_menu(main_menu);
+    // refresh();
+
+    getch();
+
 
     free_menu(main_menu);
     for(int i=0; i < number_of_choices; i++) {
