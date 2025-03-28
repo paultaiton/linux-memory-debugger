@@ -4,17 +4,17 @@
 #define CTRLD 	4
 
 char *choices[] = {
-                        "Choice 1",
-                        "Choice 2",
-                        "Choice 3",
-                        "Choice 4",
-                        "Exit",
-                        (char *)NULL,
-                  };
+	"Choice 1",
+	"Choice 2",
+	"Choice 3",
+	"Choice 4",
+	"Exit",
+	(char *)NULL,
+	};
 void print_in_middle(WINDOW *win, int starty, int startx, int width, char *string, chtype color);
 
-int main()
-{	ITEM **my_items;
+int main() {
+	ITEM **my_items;
 	int c;				
 	MENU *my_menu;
 	WINDOW *my_menu_win;
@@ -40,7 +40,7 @@ int main()
 	/* Create the window to be associated with the menu */
 	my_menu_win = newwin(10, 40, 4, 4);
 	keypad(my_menu_win, TRUE);
-     
+
 	/* Set main window and sub window */
 	set_menu_win(my_menu, my_menu_win);
 	set_menu_sub(my_menu, derwin(my_menu_win, 6, 38, 3, 1));
@@ -56,13 +56,13 @@ int main()
 	mvwaddch(my_menu_win, 2, 39, ACS_RTEE);
 	mvprintw(LINES - 2, 0, "F1 to exit");
 	refresh();
-        
+
 	/* Post the menu */
 	post_menu(my_menu);
 	wrefresh(my_menu_win);
 
 	while((c = wgetch(my_menu_win)) != KEY_F(1)) {
-    	switch(c) {
+		switch(c) {
 			case KEY_DOWN:
 				menu_driver(my_menu, REQ_DOWN_ITEM);
 				break;
