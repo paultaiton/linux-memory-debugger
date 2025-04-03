@@ -1,5 +1,6 @@
 CC=gcc
-CFLAGS=-O3 -Wall -march=native -pipe
+
+CFLAGS=-ggdb -O3 -Wall -march=native -pipe
 FORMAT=elf64
 
 all: bin/linux-memory-debugger bin/bss-user bin/test

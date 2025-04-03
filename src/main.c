@@ -5,17 +5,11 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "menu_defs.c"
+
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
 const static char *pause_message = "Press F1 key to exit...";
-
-const static char *main_menu_choices[] = {
-	"Choice 1",
-	"Choice 2",
-	"Choice 3",
-	"Choice 4",
-	"Exit",
-	};
 
 //ITEM *main_menu_items[ARRAY_SIZE(main_menu_choices) + 1]; //= (ITEM**)calloc(number_of_choices +1, sizeof(ITEM *));
 //ITEM *main_menu_items[6]; //= (ITEM**)calloc(number_of_choices +1, sizeof(ITEM *));
@@ -51,7 +45,7 @@ int main (int argc, const char *argv[]){
 
 	refresh();
 
-	int key;
+	static int key;
 	while((key = getch()) != KEY_F(1)) {
 		switch(key) {
 			case KEY_DOWN:
@@ -64,10 +58,6 @@ int main (int argc, const char *argv[]){
 	}
 
 	unpost_menu(main_menu);
-	// refresh();
-
-	getch();
-
 
 	free_menu(main_menu);
 	for(int i=0; i < number_of_choices; i++) {
