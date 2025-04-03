@@ -9,8 +9,6 @@
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
-const static char *pause_message = "Press F1 key to exit...";
-
 //ITEM *main_menu_items[ARRAY_SIZE(main_menu_choices) + 1]; //= (ITEM**)calloc(number_of_choices +1, sizeof(ITEM *));
 //ITEM *main_menu_items[6]; //= (ITEM**)calloc(number_of_choices +1, sizeof(ITEM *));
 // ITEM *main_menu_items[ARRAY_SIZE(main_menu_choices) + 1]; //= (ITEM**)calloc(number_of_choices +1, sizeof(ITEM *));
@@ -65,3 +63,4 @@ int main (int argc, const char *argv[]){
 	}
 	endwin();
 }
+

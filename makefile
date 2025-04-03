@@ -3,7 +3,7 @@ CC=gcc
 CFLAGS=-ggdb -O3 -Wall -march=native -pipe
 FORMAT=elf64
 
-all: bin/linux-memory-debugger bin/bss-user bin/test
+all: bin lib bin/linux-memory-debugger bin/bss-user bin/test
 
 bin:
 	mkdir bin
@@ -13,18 +13,18 @@ lib:
 
 ####################################################
 
-bin/linux-memory-debugger: src/main.c bin
+bin/linux-memory-debugger: src/main.c src/menu_defs.c
 	gcc ${CFLAGS} -o bin/linux-memory-debugger src/main.c -lmenu -lncurses -ltinfo
 	# strip bin/linux-memory-debugger
 
 ####################################################
 
-bin/bss-user: src/bss_user.c bin
+bin/bss-user: src/bss_user.c
 	gcc ${CFLAGS} -mcmodel=large -o bin/bss_user src/bss_user.c
 
 ####################################################
 
-bin/test: src/test.c bin
+bin/test: src/test.c
 	gcc ${CFLAGS} -o bin/test src/test.c
 
 ####################################################
