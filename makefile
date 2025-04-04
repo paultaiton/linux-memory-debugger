@@ -20,7 +20,7 @@ bin/linux-memory-debugger: src/main.c src/menu_defs.c
 ####################################################
 
 bin/bss-user: src/bss_user.c
-	gcc ${CFLAGS} -mcmodel=large -o bin/bss_user src/bss_user.c
+	gcc ${CFLAGS} -mcmodel=large -o bin/bss-user src/bss_user.c
 
 ####################################################
 
