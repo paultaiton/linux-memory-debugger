@@ -27,9 +27,8 @@ int main (int argc, const char *argv[]){
 	mvprintw(23, 0, "Lines: %u", LINES);
 
 	int number_of_choices = ARRAY_SIZE(main_menu_choices);
-	// ITEM **main_menu_items = (ITEM**)calloc(number_of_choices +1, sizeof(ITEM *));
-	for(int i=0; i < number_of_choices; i++) {
-		main_menu_items[i] = new_item(main_menu_choices[i], main_menu_choices[i]);
+	for(int i=0; main_menu_choices[i] != NULL; i++) {
+		main_menu_items[i] = new_item(main_menu_choices[i]->name, main_menu_choices[i]->descritpion);
 		if (main_menu_items[i]== NULL) {
 			perror("ERROR E001: failure while instantiating menu_items.\n");
 			endwin();
