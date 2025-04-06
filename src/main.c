@@ -44,13 +44,25 @@ int main (int argc, const char *argv[]){
 	refresh();
 
 	static int key;
-	while((key = getch()) != KEY_F(1)) {
+	static int quit = 0;
+	ITEM *selected_item = current_item(main_menu);
+	while(quit == 0){
+		selected_item = current_item(main_menu);
+		mvprintw(8, 0, "Selected item is %p", selected_item);
+		mvprintw(9, 0, "Exit item is %p", main_menu_items[4]);
+		key = getch();
 		switch(key) {
 			case KEY_DOWN:
 				menu_driver(main_menu, REQ_DOWN_ITEM);
 				break;
 			case KEY_UP:
 				menu_driver(main_menu, REQ_UP_ITEM);
+				break;
+			case KEY_RIGHT:
+				//if (selected_item == (ITEM*)main_menu_choices[4]) {
+				if (selected_item == main_menu_items[4]) {
+					quit = 1;
+				}
 				break;
 		}
 	}
