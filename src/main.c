@@ -63,7 +63,7 @@ int main (int argc, const char *argv[]){
 				menu_driver(main_menu, REQ_UP_ITEM);
 				break;
 			//case KEY_RIGHT:
-			case KEY_ENTER:
+			case KEY_RIGHT:
 				//if (selected_item == (ITEM*)main_menu_choices[4]) {
 				if (selected_item == main_menu_items[4]) {
 					quit = 1;
