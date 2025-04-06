@@ -51,6 +51,10 @@ int main (int argc, const char *argv[]){
 		mvprintw(8, 0, "Selected item is %p", selected_item);
 		mvprintw(9, 0, "Exit item is %p", main_menu_items[4]);
 		key = getch();
+		move(10, 0);
+		clrtoeol();
+		printw("Input was %u, %s", key, keyname(key));
+		mvprintw(11, 0, "Enter is %u, %x", KEY_ENTER, KEY_ENTER );
 		switch(key) {
 			case KEY_DOWN:
 				menu_driver(main_menu, REQ_DOWN_ITEM);
@@ -58,7 +62,8 @@ int main (int argc, const char *argv[]){
 			case KEY_UP:
 				menu_driver(main_menu, REQ_UP_ITEM);
 				break;
-			case KEY_RIGHT:
+			//case KEY_RIGHT:
+			case KEY_ENTER:
 				//if (selected_item == (ITEM*)main_menu_choices[4]) {
 				if (selected_item == main_menu_items[4]) {
 					quit = 1;
