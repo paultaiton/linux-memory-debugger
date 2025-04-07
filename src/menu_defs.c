@@ -8,12 +8,8 @@
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
 static int quit_flag = 0;
-int success() {
-	return TRUE;
-}
-int failure() {
-	return FALSE;
-}
+int success() { return TRUE; }
+int failure() { return FALSE; }
 int quit() {
 	quit_flag = 1;
 	return 0;
