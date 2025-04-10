@@ -1,6 +1,7 @@
 CC=gcc
 
-CFLAGS=-ggdb -O3 -Wall -march=native -pipe
+# CFLAGS=-ggdb -O2 -Wall -march=native -pipe
+CFLAGS=-std=c23 -ggdb -O2 -Wall -Werror -march=native -pipe
 FORMAT=elf64
 
 all: bin lib bin/linux-memory-debugger bin/bss-user bin/test
