@@ -15,11 +15,11 @@ void print_in_middle(WINDOW *win, int starty, int startx, int width, char *strin
 
 int main() {
 	ITEM **my_items;
-	int c;				
+	int c;
 	MENU *my_menu;
 	WINDOW *my_menu_win;
 	int n_choices, i;
-	
+
 	/* Initialize curses */
 	initscr();
 	start_color();
@@ -71,7 +71,7 @@ int main() {
 				break;
 		}
 		wrefresh(my_menu_win);
-	}	
+	}
 
 	/* Unpost and free all the memory taken up */
 	unpost_menu(my_menu);
