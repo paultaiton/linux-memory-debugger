@@ -31,4 +31,4 @@ bin/test: src/test.c
 ####################################################
 
 clean:
-	rm -f lib/* bin/* 
+	rm -f lib/* bin/*
