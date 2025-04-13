@@ -4,7 +4,7 @@
 #include <stdalign.h>
 #include <stdlib.h>
 
-typedef struct 
+typedef struct
 {
 	int value; // aligns on a 4-byte boundary. There will be 28 bytes of padding between value and alignas
 	alignas(32) char alignedMemory[32]; // assuming a 32 byte friendly cache alignment
